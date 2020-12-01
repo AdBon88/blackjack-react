@@ -5,14 +5,14 @@ export class ToDoList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { items: [], loading: true };
+    this.state = { toDoItems: [], loading: true };
   }
 
   componentDidMount() {
     this.populateToDoList();
   }
 
-  static renderToDoTable(items) {
+  static renderToDoTable(toDoitems) {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabel">
         <thead>
@@ -22,9 +22,9 @@ export class ToDoList extends Component {
           </tr>
         </thead>
         <tbody>
-          {items.map(item =>
-            <tr key={item.date}>
-              <td>{item.taskNo}</td>
+          {toDoitems.map(item =>
+            <tr>
+              <td>1</td>
               <td>{item.description}</td>
             </tr>
           )}
@@ -36,7 +36,7 @@ export class ToDoList extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : ToDoList.renderToDoTable(this.state.forecasts);
+      : ToDoList.renderToDoTable(this.state.toDoItems);
 
     return (
       <div>
@@ -48,8 +48,8 @@ export class ToDoList extends Component {
   }
 
   async populateToDoList() {
-    const response = await fetch('weather');
+    const response = await fetch('todolist');
     const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
+    this.setState({ toDoItems: data, loading: false });
   }
 }
