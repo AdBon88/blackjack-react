@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './modal.css';
+import './modal.css';
 
 
 const AddItemModal = ({ handleClose, show, children }) => {

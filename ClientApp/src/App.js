@@ -4,7 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
-import { ToDoList } from './components/ToDoList';
+import { ToDoList } from './components/toDoList/ToDoListView';
 
 import './custom.css'
 
