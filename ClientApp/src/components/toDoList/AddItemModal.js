@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './modal.css';
+import Button from 'reactstrap/lib/Button';
 
 
 const AddItemModal = ({ handleClose, show, children }) => {
@@ -9,9 +10,17 @@ const AddItemModal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className="modal-main">
         {children}
-        <button type="button" onClick={handleClose}>
-          Close
-        </button>
+<input
+                    className="inputField"
+                    placeholder="laundry..."
+                    // onChange={this.handleChange}
+                  ></input>
+
+          {/* <p>Modal</p>
+          <p>Data</p> */}
+        <div>
+          <Button className="btn btn-modal" onClick={handleClose}>Save</Button>
+        </div>
       </section>
     </div>
   );

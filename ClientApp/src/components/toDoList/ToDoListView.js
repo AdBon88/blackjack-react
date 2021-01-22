@@ -10,7 +10,6 @@ export class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = { toDoItems: [], isLoading: true, shouldShowModal: false };
-    this.showModal = this.showModal.bind(this);
   }
 
   componentDidMount = () => {
@@ -18,13 +17,13 @@ export class ToDoList extends Component {
   };
 
 
-  showAddItemModal() {
-    console.log(this.state);
-    this.state.shouldShowModal = true;
-  }
+  showModal = () => {
+    this.setState({ shouldShowModal: true });
+  };
 
-  showModal() {
-    this.state.shouldShowModal = true;
+
+  hideModal = () => {
+    this.setState({ shouldShowModal: false });
   };
 
   render() {
@@ -42,9 +41,7 @@ export class ToDoList extends Component {
         <h1 id="tableLabel" >To-Do</h1>
         <p>On my list I have...</p>
         {contents}
-        <AddItemModal  show={this.state.shouldShowModal} handleClose={this.hideModal}>
-          <p>Modal</p>
-        </AddItemModal>
+        <AddItemModal show={this.state.shouldShowModal} handleClose={this.hideModal}></AddItemModal>
       </div>
     );
   }

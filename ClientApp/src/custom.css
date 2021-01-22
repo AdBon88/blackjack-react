@@ -13,3 +13,28 @@ code {
   background-color: #1b6ec2;
   border-color: #4d3131;
 }
+
+/* .btn-modal {
+  margin-left: auto;
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #4d3131;
+} */
+.modal-main {
+  margin: auto;
+  display: inline-flex;
+}
+
+.inputField {
+  display: flex;
+}
+.btn-modal {
+  display: inline-flexbox;
+  /* flex-direction: row; */
+  align-items:center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: rgb(78, 78, 78); */
+/* ; */
+}
+
